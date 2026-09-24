@@ -1,0 +1,52 @@
+{
+  "name": "impress",
+  "version": "5.4.1",
+  "private": true,
+  "repository": "https://github.com/suitenumerique/docs",
+  "author": "DINUM",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*",
+      "servers/*"
+    ]
+  },
+  "scripts": {
+    "APP_IMPRESS": "yarn workspace app-impress",
+    "APP_E2E": "yarn workspace app-e2e",
+    "I18N": "yarn workspace packages-i18n",
+    "COLLABORATION_SERVER": "yarn workspace server-y-provider",
+    "app:dev": "yarn APP_IMPRESS run dev",
+    "app:start": "yarn APP_IMPRESS run start",
+    "app:build": "yarn APP_IMPRESS run build",
+    "app:test": "yarn APP_IMPRESS run test",
+    "ci:build": "yarn APP_IMPRESS run build:ci",
+    "build": "yarn APP_IMPRESS run build && yarn COLLABORATION_SERVER run build",
+    "e2e:test": "yarn APP_E2E run test",
+    "lint": "yarn APP_IMPRESS run lint && yarn APP_E2E run lint && yarn workspace eslint-plugin-docs run lint && yarn I18N run lint && yarn COLLABORATION_SERVER run lint",
+    "i18n:extract": "yarn I18N run extract-translation",
+    "i18n:deploy": "yarn I18N run format-deploy && yarn APP_IMPRESS prettier",
+    "i18n:test": "yarn I18N run test",
+    "test": "yarn server:test && yarn app:test",
+    "server:test": "yarn COLLABORATION_SERVER run test"
+  },
+  "resolutions": {
+    "@gouvfr-lasuite/cunningham-react": "4.3.1",
+    "@tiptap/extensions": "3.27.4",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "dompurify": "3.4.12",
+    "eslint": "10.7.0",
+    "js-yaml": "5.2.1",
+    "postcss": "8.5.19",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "serialize-javascript": "7.0.7",
+    "typescript": "6.0.3",
+    "wrap-ansi": "10.0.0",
+    "yjs": "13.6.31"
+  },
+  "packageManager": "yarn@1.22.22"
+}
