@@ -481,3 +481,7 @@ We are always looking for new public partners — feel free to [contact us](mail
 <p align="center">
   <img src="documentation/assets/europe_opensource.png" width="50%"/ alt="Europe Opensource">
 </p>
+
+---
+
+Built by Girish Lade — https://ladestack.in
